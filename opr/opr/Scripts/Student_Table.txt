@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[Student_Table] (
+    [Id]                INT            IDENTITY (1, 1) NOT NULL,
+    [First_Name]        NVARCHAR (128) NOT NULL,
+    [Contact_Mobile]    NVARCHAR (20)  NULL,
+    [Parent_Contact]    NVARCHAR (20)  NULL,
+    [Student_Email]     NVARCHAR (128) NULL,
+    [Postal_Address]    NVARCHAR (200) NULL,
+    [Registration_Date] DATETIME       NULL,
+    [Registration_ID]   NVARCHAR (128) NULL,
+    [Modified_By]       NVARCHAR (128) NULL,
+    [Modified_Date]     DATETIME       NULL,
+    [Is_Deleted]        BIT            NULL,
+    [Is_Active]         BIT            NULL,
+    [Description]       NVARCHAR (128) NULL,
+    [Short_Code]        NCHAR (10)     NULL,
+    [Last_Name]         NVARCHAR (128) NULL,
+    [Father_Name]       NVARCHAR (128) NULL,
+    [Date_Of_Birth]     NVARCHAR (128) NULL,
+    [Gender]            NVARCHAR (50)  NULL,
+    [Roll_No]           INT            NULL,
+    [Father_CNIC]       NVARCHAR (50)  NULL,
+    [Session]           NCHAR (10)     NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
