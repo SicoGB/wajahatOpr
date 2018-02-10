@@ -1,0 +1,86 @@
+﻿@model opr.Models.Group
+@{
+    ViewBag.Title = "EditGroup";
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Edit Data In Group</h2>
+    </div>
+
+    <div class="container ">
+        <div class="row">
+            <div class="panel-body col-lg-8 ">
+                @using (Html.BeginForm()) {
+                    
+
+
+                <form method="post">
+                    @Html.AntiForgeryToken()
+
+
+                    @*@Html.Label("User ID :")
+        <br />*@
+                    @Html.HiddenFor(Model => Model.User_Id, new { @Value = ViewBag.ids, required = "required", })
+                    <br />
+                    @Html.Label("Group Name :")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Group_Name, new {  @class = "form-control" })
+                  
+                    <br />
+                    @Html.Label("Short COde :")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Short_Code, new {  @class = "form-control" })
+                   
+    @*<br />
+        @Html.Label("Modified By :")
+        <br />*@
+                    @Html.HiddenFor(Model => Model.Modified_By, new { @Value = ViewBag.name, required = "required" })
+
+                    @*<br />
+        @Html.Label(" Select Modified Date :")
+        <br />*@
+                    @Html.HiddenFor(Model => Model.Modified_Date, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required" })
+
+                    @*<br />
+        @Html.Label(" Select Entry Date :")
+        <br />*@
+                    @Html.HiddenFor(Model => Model.Entry_Date, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required" })
+                    <br />
+                    <br />
+                    @Html.Label("Description :")
+                    <br />
+                    @Html.TextAreaFor(Model => Model.Description, new { required = "required", placeholder = "Write something..", style = "height:200px", @class = "form-control" })
+                    <br />
+
+
+                    @Html.HiddenFor(Model => Model.IsDeleted, "True")
+
+                    @Html.HiddenFor(Model => Model.IsDeleted, "False")
+
+                    @Html.HiddenFor(Model => Model.IsActive, "True")
+
+                    @Html.HiddenFor(Model => Model.IsActive, "False")
+                    <br />
+
+
+                    <br />
+
+                    <input class="btn-group-lg" type="submit" name="submit" />
+                    </form>
+                }
+
+</div>
+            <div class="col-lg-2">
+                
+            </div>
+            <div class="col-lg-2">
+                <br />
+            <div class="btn  btn-default">
+                @Html.ActionLink("Go to List", "Index")
+            </div>
+                </div>
+        </div>
+        </div>
+        <br />
+        
+    </div>

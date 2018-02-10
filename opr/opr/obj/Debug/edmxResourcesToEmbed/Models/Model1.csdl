@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="oprModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Group_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Short_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Entry_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="User_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Modified_By" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Modified_Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="oprEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="Campus_Table" EntityType="oprModel.Campus_Table" />
+  </EntityContainer>
+  <EntityType Name="Campus_Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Campus_Name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Campus_Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Campus_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Registration_Date" Type="DateTime" Precision="3" />
+    <Property Name="User_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Modified_By" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Modified_Date" Type="DateTime" Precision="3" />
+    <Property Name="Is_Deleted" Type="Boolean" />
+    <Property Name="Is_Active" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Short_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+</Schema>

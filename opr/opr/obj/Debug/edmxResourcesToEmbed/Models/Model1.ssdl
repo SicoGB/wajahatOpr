@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="oprModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Campus_Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Campus_Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Contact_Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Contact_Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Campus_Email" Type="nvarchar" MaxLength="128" />
+    <Property Name="Campus_Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Registration_Date" Type="datetime" />
+    <Property Name="User_ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Modified_By" Type="nvarchar" MaxLength="128" />
+    <Property Name="Modified_Date" Type="datetime" />
+    <Property Name="Is_Deleted" Type="bit" />
+    <Property Name="Is_Active" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="128" />
+    <Property Name="Short_Code" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Short_Code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Entry_Date" Type="datetime" Nullable="false" />
+    <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Modified_By" Type="nvarchar" MaxLength="128" />
+    <Property Name="Modified_Date" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="oprModelStoreContainer">
+    <EntitySet Name="Campus_Table" EntityType="Self.Campus_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,93 @@
+﻿@model opr.Models.Campus_Table
+@{
+    ViewBag.Title = "EditCampus";
+
+}
+
+<div class="panel panel-primary ">
+    <div class="panel-heading">
+        <h2>Edit Campus Data</h2>
+    </div>
+    <div class="container  ">
+
+        <div class=" row ">
+
+           
+            <form method="post">
+                <div class="panel-body col-lg-4 col-md-4 col-sm-3 col-xs-3 ">
+
+
+                    @Html.Label("Short Code :")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Short_Code, new { @class = "form-control", required = "required" })
+                    <br />
+                    @Html.Label("Camus Name")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Campus_Name, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Phone Number")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Contact_Phone, new { @class = "form-control" })
+                    <br />
+                    @Html.Label(" Mobile Number")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Contact_Mobile, new { @class = "form-control" })
+                    <br />
+                    <br />
+                    <input type="submit" name="Submit" />
+                    <br />
+                </div>
+                <div class="col-lg-4">
+
+                    <br />
+                    @Html.Label("Campus Email ")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Campus_Email, new { @class = "form-control" })
+
+                    <br />
+                    @Html.Label("Campus Address")
+                    <br />
+                    @Html.TextBoxFor(Model => Model.Campus_Address, new { @class = "form-control" })
+                    @*<br />
+        @Html.Label("Registration Date")
+        <br />*@
+                    @Html.HiddenFor(Model => Model.Registration_Date, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required" })
+                    @*<br />
+        @Html.Label("User ID")
+        <br />*@
+                    @Html.HiddenFor(Model => Model.User_ID, new { @Value = ViewBag.idcam })
+                    @*input type="hidden" name="User_ID" value="@ViewBag.idcam" />*@
+
+                    @*@Html.Label("Modified By")*@
+
+                    @Html.HiddenFor(Model => Model.Modified_By, new { @Value = ViewBag.userName, required = "required" })
+
+                    @*@Html.Label("Modified Date")*@
+
+                    @Html.HiddenFor(Model => Model.Modified_Date, new { @Value = DateTime.Now.ToString("dd-MM-yyyy"), required = "required" })
+
+                    <br />
+                    @Html.Label("Description:")
+                    <br />
+                    @Html.TextAreaFor(Model => Model.Description, new { required = "required", placeholder = "Write something..", style = "height:150px", @class = "form-control" })
+                    <br />
+                </div>
+
+            </form>
+                <br />
+               
+            <div class="col-lg-2">
+                </div>
+            <div class="col-lg-2">
+                
+                <br />
+                <div class="btn  btn-default">
+                    @Html.ActionLink("Go to List", "Index")
+                </div>
+            </div>
+            </div>
+           
+
+        </div>
+    </div>
+

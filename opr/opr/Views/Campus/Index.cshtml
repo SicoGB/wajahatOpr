@@ -1,0 +1,56 @@
+﻿@model List<opr.Models.Campus_Table>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class=" panel-primary container">
+    <div class="panel-heading">
+        <h2>List Of Campuses</h2>
+    </div>
+
+
+    <table class="table panel-body table-striped table-bordered">
+        <th>ID</th>
+        <th>Short Code</th>
+        <th>Name</th>
+        <th>Pone #</th>
+        <th>Mobile #</th>
+        <th>Email ID</th>
+        <th>Address</th>
+        <th>Registration Date</th>
+        <th>User ID</th>
+        <th>Modified By</th>
+        <th>Modified Date</th>
+        <th>Description</th>
+        <th>Action</th>
+        @foreach (var cam in Model)
+        {
+            <tr>
+                <td>@cam.Id</td>
+                <td>@cam.Short_Code</td>
+                <td>@cam.Campus_Name</td>
+                <td>@cam.Contact_Phone</td>
+                <td>@cam.Contact_Mobile</td>
+                <td>@cam.Campus_Email</td>
+                <td>@cam.Campus_Address</td>
+                <td>@cam.Registration_Date</td>
+                <td>@cam.User_ID</td>
+                <td>@cam.Modified_By</td>
+                <td>@cam.Modified_Date</td>
+                <td>@cam.Description</td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteCampus", new { id = cam.Id })|
+                    @Html.ActionLink("Edit", "EditCampus", new { id = cam.Id })
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="btn  btn-default">
+        @Html.ActionLink("Add New Campus", "AddCampus")
+    </div>
+
+</div>   
+       
+   
+
+

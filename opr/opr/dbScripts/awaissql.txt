@@ -1,0 +1,14 @@
+﻿CREATE TABLE [dbo].[Sections] (
+    [Id]           INT            IDENTITY (1, 1) NOT NULL,
+    [IsDeleted]    BIT            NULL,
+    [IsActive]     BIT            NULL,
+    [Name]         VARCHAR (50)   NULL,
+    [ShortCode]    NVARCHAR (8)   NULL,
+    [Description]  VARCHAR (350)  NULL,
+    [UserId]       NVARCHAR (128) NULL,
+    [EntryDate]    DATETIME       NULL,
+    [ModifiedBy]   NVARCHAR (128) NULL,
+    [ModifiedDate] DATETIME       NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

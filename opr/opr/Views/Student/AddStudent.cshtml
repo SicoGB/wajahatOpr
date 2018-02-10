@@ -1,0 +1,74 @@
+﻿@model opr.Models.StudentTable
+
+@{
+    ViewBag.Title = "AddClass";
+}
+
+<h2>Student Registration</h2>
+
+
+<div>
+
+    @using (Html.BeginForm())
+    {
+    <form method="post">
+
+        @Html.HiddenFor(model => model.StdUserId, new { @Value = @ViewBag.UserId })
+        <label for="StudentName">Student Name</label>
+        @Html.TextBoxFor(model => model.StudentName, new { required = "required", @class = "form-control" })
+        <label for="fathername">Father Name</label>
+        @Html.TextBoxFor(model => model.StdFatherName, new { required = "required", @class = "form-control" })
+        <label for="GuardianName">Guardian Name</label>
+        @Html.TextAreaFor(model => model.StdGuardianName, new { required = "required", @class = "form-control" })
+
+        <label for="ShortCode">Guardian Contact</label>
+        @Html.TextBoxFor(model => model.StdGuardianContact, new { required = "required", @class = "form-control" })
+        <label for="RegistrationDate">Registration Date</label>
+        @Html.HiddenFor(model => model.StdGuardianName, new { @Value = DateTime.Now.ToString("dd-MM-yyyy") })
+
+        <label for="Email">Email</label>
+        @Html.TextBoxFor(model => model.StudentEmail, new { required = "required", @class = "form-control" })
+        <label for="Contact">Contact</label>
+        @Html.TextBoxFor(model => model.StudentContact, new { required = "required", @class = "form-control" })
+        <label for="CNIC">CNIC</label>
+        @Html.TextBoxFor(model => model.StudentCnic, new { required = "required", @class = "form-control" })
+        @*<label for="Province">Province</label>*@
+        @* @Html.DropDownListFor(Model => Model.StdProvince, (SelectList)ViewBag.dataForDropDown1, htmlAttributes: new { @class = "form-control", id = "class" })*@
+        @*<label for="District">District</label>*@
+        @* @Html.DropDownListFor(Model => Model.StdDistrict, (SelectList)ViewBag.dataForDropDown2, htmlAttributes: new { @class = "form-control", id = "class" })*@
+        @*<label for="StudentName">Tehsil</label>*@
+        @*@Html.DropDownListFor(Model => Model.StdTehsil, (SelectList)ViewBag.dataForDropDown3, htmlAttributes: new { @class = "form-control", id = "class" })*@
+        @*<label for="StudentName">Domicile</label>*@
+        @* @Html.DropDownListFor(Model => Model.Domicile, (SelectList)ViewBag.dataForDropDown4, htmlAttributes: new { @class = "form-control", id = "class" })*@
+        <label for="PermanentAddress">Permanent Address</label>
+        @Html.TextBoxFor(model => model.StudentPermntAddress, new { required = "required", @class = "form-control" })
+        <label for="TemporaryAddress">Temporary Address</label>
+        @Html.TextBoxFor(model => model.StudentTempAddress, new { required = "required", @class = "form-control" })
+        @* <label for="TemporaryAddress">Zip Code</label>*@
+        @*@Html.DropDownListFor(Model => Model.StdZipCode, (SelectList)ViewBag.dataForDropDown5, htmlAttributes: new { @class = "form-control", id = "class" })*@
+        <label for="InstitutionLastAttended">Institution Last Attended</label>
+        @Html.TextBoxFor(model => model.InstituteLastAttended, new { required = "required", @class = "form-control" })
+        <label for="Qualification">Qualification</label>
+        @Html.TextBoxFor(model => model.StdQualification, new { required = "required", @class = "form-control" })
+        <label for="BloodGroup">Blood Group</label>
+        @Html.TextBoxFor(model => model.StudentBloodGrp, new { required = "required", @class = "form-control" })
+        <label for="Gender">Gender</label>
+        <br>
+        @Html.RadioButton("Gender", "Male") Male
+        <br>
+        @Html.RadioButton("Gender", "Female") Female
+        <br>
+        <label for="User ID">User ID</label>
+        @Html.TextBoxFor(model => model.UserId, new { required = "required", @class = "form-control" })
+        <label for="Password">Password</label>
+        @Html.TextBoxFor(model => model.Password, new { required = "required", @class = "form-control" })
+
+
+        <br />
+        <input type="submit" value="submit" />
+    </form>
+
+
+    }
+    @Html.ActionLink("Student Details", "Index", new { })
+</div>

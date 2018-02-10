@@ -1,0 +1,54 @@
+﻿@model List<opr.Models.Group>
+@{ 
+    ViewBag.Title = "Index";
+    
+}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>List Of Groups</h2>
+    </div>
+
+    <table class="panel-body table-striped table-bordered ">
+
+        <th>ID</th>
+        <th>Group Name</th>
+        <th>Short_Code</th>
+        <th>User_ID</th>
+        <th>Entry_Date</th>
+        <th>Modified_By</th>
+        <th>Modified_Date</th>
+        <th>Is Deleted</th>
+        <th> Description</th>
+        <th>Action</th>
+
+        @foreach (var mol in Model)
+        {
+            <tr>
+                <td>@mol.Id</td>
+                <td>@mol.Group_Name</td>
+                <td>@mol.Short_Code</td>
+                <td>@mol.User_Id</td>
+                <td>@mol.Entry_Date</td>
+
+                <td>@mol.Modified_By</td>
+                <td>@mol.Modified_Date</td>
+                <td>@mol.IsDeleted</td>
+
+
+                <td>@mol.Description</td>
+                <td>
+                    @Html.ActionLink("Edit", "EditGroup", new { id = mol.Id })|
+
+                    @Html.ActionLink("Delete", "DeleteGroup", new { id = mol.Id })|
+                </td>
+            </tr>
+        }
+    </table>
+
+    <br />
+    <div class="btn  btn-default">
+        @Html.ActionLink("Add New Group", "AddGroup")
+        <br />
+    </div>
+    <br />
+</div>
