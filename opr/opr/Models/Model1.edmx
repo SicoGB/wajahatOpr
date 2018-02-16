@@ -38,33 +38,54 @@
           <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="Modified_By" Type="nvarchar" MaxLength="128" />
           <Property Name="Modified_Date" Type="datetime" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Student_Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Contact_Mobile" Type="nvarchar" MaxLength="20" />
+          <Property Name="Parent_Contact" Type="nvarchar" MaxLength="20" />
+          <Property Name="Student_Email" Type="nvarchar" MaxLength="128" />
+          <Property Name="Postal_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Registration_Date" Type="datetime" />
+          <Property Name="User_ID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Last_Modified_By" Type="nvarchar" MaxLength="128" />
+          <Property Name="Last_Modified_Date" Type="datetime" />
+          <Property Name="Is_Deleted" Type="tinyint" />
+          <Property Name="Is_Active" Type="tinyint" />
+          <Property Name="Description" Type="nvarchar" MaxLength="128" />
+          <Property Name="Short_Code" Type="nchar" MaxLength="10" />
+          <Property Name="Father_Name" Type="nvarchar" MaxLength="128" />
+          <Property Name="Date_Of_Birth" Type="date" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Roll_No" Type="int" />
+          <Property Name="Father_CNIC" Type="nvarchar" MaxLength="20" />
+          <Property Name="Is_Banned" Type="tinyint" />
+          <Property Name="Registration_No" Type="nchar" MaxLength="10" />
+          <Property Name="Is_Account_Active" Type="tinyint" />
+          <Property Name="User_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="nvarchar" MaxLength="1000" />
+          <Property Name="School_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Center_Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Image" Type="varchar" MaxLength="500" />
+          <Property Name="Contact_Phone" Type="nchar" MaxLength="16" />
         </EntityType>
         <EntityContainer Name="oprModelStoreContainer">
           <EntitySet Name="Campus_Table" EntityType="Self.Campus_Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student_Table" EntityType="Self.Student_Table" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="oprModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Group">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Group_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Short_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IsDeleted" Type="Boolean" />
-          <Property Name="IsActive" Type="Boolean" />
-          <Property Name="Entry_Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="User_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Modified_By" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="Modified_Date" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityContainer Name="oprEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Groups" EntityType="Self.Group" />
           <EntitySet Name="Campus_Table" EntityType="oprModel.Campus_Table" />
+          <EntitySet Name="Student_Table" EntityType="oprModel.Student_Table" />
+          <EntitySet Name="Groups" EntityType="oprModel.Group" />
         </EntityContainer>
         <EntityType Name="Campus_Table">
           <Key>
@@ -85,28 +106,61 @@
           <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="Short_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
+        <EntityType Name="Student_Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Contact_Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Parent_Contact" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Student_Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Postal_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Registration_Date" Type="DateTime" Precision="3" />
+          <Property Name="User_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Modified_By" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Modified_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Deleted" Type="Byte" />
+          <Property Name="Is_Active" Type="Byte" />
+          <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Short_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Father_Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Of_Birth" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Roll_No" Type="Int32" />
+          <Property Name="Father_CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Is_Banned" Type="Byte" />
+          <Property Name="Registration_No" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Is_Account_Active" Type="Byte" />
+          <Property Name="User_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="School_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Center_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_Phone" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Group_Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Short_Code" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="Entry_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="User_Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Modified_By" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Modified_Date" Type="DateTime" Precision="3" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="oprModelStoreContainer" CdmEntityContainer="oprEntities">
-          <EntitySetMapping Name="Groups">
-            <EntityTypeMapping TypeName="oprModel.Group">
-              <MappingFragment StoreEntitySet="Group">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
-                <ScalarProperty Name="Short_Code" ColumnName="Short_Code" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Entry_Date" ColumnName="Entry_Date" />
-                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
-                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
-                <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Campus_Table">
             <EntityTypeMapping TypeName="oprModel.Campus_Table">
               <MappingFragment StoreEntitySet="Campus_Table">
@@ -123,6 +177,57 @@
                 <ScalarProperty Name="Contact_Mobile" ColumnName="Contact_Mobile" />
                 <ScalarProperty Name="Contact_Phone" ColumnName="Contact_Phone" />
                 <ScalarProperty Name="Campus_Name" ColumnName="Campus_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Student_Table">
+            <EntityTypeMapping TypeName="oprModel.Student_Table">
+              <MappingFragment StoreEntitySet="Student_Table">
+                <ScalarProperty Name="Contact_Phone" ColumnName="Contact_Phone" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Center_Name" ColumnName="Center_Name" />
+                <ScalarProperty Name="School_Name" ColumnName="School_Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="Is_Account_Active" ColumnName="Is_Account_Active" />
+                <ScalarProperty Name="Registration_No" ColumnName="Registration_No" />
+                <ScalarProperty Name="Is_Banned" ColumnName="Is_Banned" />
+                <ScalarProperty Name="Father_CNIC" ColumnName="Father_CNIC" />
+                <ScalarProperty Name="Roll_No" ColumnName="Roll_No" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+                <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+                <ScalarProperty Name="Short_Code" ColumnName="Short_Code" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+                <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+                <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+                <ScalarProperty Name="Last_Modified_By" ColumnName="Last_Modified_By" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Registration_Date" ColumnName="Registration_Date" />
+                <ScalarProperty Name="Postal_Address" ColumnName="Postal_Address" />
+                <ScalarProperty Name="Student_Email" ColumnName="Student_Email" />
+                <ScalarProperty Name="Parent_Contact" ColumnName="Parent_Contact" />
+                <ScalarProperty Name="Contact_Mobile" ColumnName="Contact_Mobile" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="oprModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Entry_Date" ColumnName="Entry_Date" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Short_Code" ColumnName="Short_Code" />
+                <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -25,7 +25,8 @@ namespace opr.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<Campus_Table> Campus_Table { get; set; }
+        public virtual DbSet<Student_Table> Student_Table { get; set; }
+        public virtual DbSet<Group> Groups { get; set; }
     }
 }

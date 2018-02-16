@@ -37,5 +37,39 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Student_Table">
+      <EntityTypeMapping TypeName="oprModel.Student_Table">
+        <MappingFragment StoreEntitySet="Student_Table">
+          <ScalarProperty Name="Contact_Phone" ColumnName="Contact_Phone" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Center_Name" ColumnName="Center_Name" />
+          <ScalarProperty Name="School_Name" ColumnName="School_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Is_Account_Active" ColumnName="Is_Account_Active" />
+          <ScalarProperty Name="Registration_No" ColumnName="Registration_No" />
+          <ScalarProperty Name="Is_Banned" ColumnName="Is_Banned" />
+          <ScalarProperty Name="Father_CNIC" ColumnName="Father_CNIC" />
+          <ScalarProperty Name="Roll_No" ColumnName="Roll_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Short_Code" ColumnName="Short_Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="Is_Deleted" ColumnName="Is_Deleted" />
+          <ScalarProperty Name="Last_Modified_Date" ColumnName="Last_Modified_Date" />
+          <ScalarProperty Name="Last_Modified_By" ColumnName="Last_Modified_By" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Registration_Date" ColumnName="Registration_Date" />
+          <ScalarProperty Name="Postal_Address" ColumnName="Postal_Address" />
+          <ScalarProperty Name="Student_Email" ColumnName="Student_Email" />
+          <ScalarProperty Name="Parent_Contact" ColumnName="Parent_Contact" />
+          <ScalarProperty Name="Contact_Mobile" ColumnName="Contact_Mobile" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

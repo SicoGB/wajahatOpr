@@ -1,19 +1,90 @@
 ﻿@model opr.Models.Student_Table
 @{
     ViewBag.Title = "AddStudent";
-   
+
 }
 
 <div class="panel panel-primary">
     <div class="panel-heading">
+
         <h2>Add Student Record</h2>
+        @Html.ActionLink("List ","Index",new {Type="button", @class="form-control"  })
     </div>
     <div class="container">
-        <div class="">
+        <div class="panel-body ">
+            @using (Html.BeginForm())
+    {
+            <form method="post">
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+
+                        @Html.Label("Student Name")
+                        @Html.TextBoxFor(Model => Model.Name, new { placeholder = "Enter Student Name", required = "required", @class = "form-control" })
+                        @Html.Label("Student Phone #")
+                        @Html.TextBoxFor(Model => Model.Contact_Mobile, new { placeholder = "e.g. 03417789943", required = "required", @class = "form-control" })
+                        @Html.Label(" Parent Contact #")
+                        @Html.TextBoxFor(Model => Model.Parent_Contact, new { placeholder = "father contact #", required = "required", @class = "form-control" })
+                        @Html.Label("Student  Email ID ")
+                        @Html.TextBoxFor(Model => Model.Student_Email, new { placeholder = "eg. emailaddress@gmail.com", required = "required", @class = "form-control" })
+                        @Html.Label("Postal Address")
+                        @Html.TextBoxFor(Model => Model.Postal_Address, new { placeholder = "your home location", required = "required", @class = "form-control" })
 
 
+                        @Html.Label("User ID")
+                        @Html.TextBoxFor(Model => Model.User_ID, new { @Value = ViewBag.userID, required = "required", @class = "form-control" })
+                        @Html.Label("Short Code ")
+                        @Html.TextBoxFor(Model => Model.Short_Code, new { placeholder = "max 4 digit code", required = "required", @class = "form-control" })
 
 
+                        <input type="submit" name="submit" />
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        @Html.Label("Student Father Name")
+                        @Html.TextBoxFor(Model => Model.Father_Name, new { placeholder = "your father name", required = "required", @class = "form-control" })
+                        @Html.Label(" Father's CNIC # ")
+                        @Html.TextBoxFor(Model => Model.Father_CNIC, new { placeholder = "cnic number without space or bar", required = "required", @class = "form-control" })
+                        @Html.Label("Roll No ")
+                        @Html.TextBoxFor(Model => Model.Roll_No, new { placeholder = "Student roll no", required = "required", @class = "form-control" })
+
+
+                        @Html.Label(" Student User Name ")
+                        @Html.TextBoxFor(Model => Model.User_Name, new { @class = "form-control" })
+                        @Html.Label("Password")
+                        @Html.TextBoxFor(Model => Model.Password, new { placeholder = "*********", required = "required", @class = "form-control" })
+                        @Html.Label("Center Name")
+                        @Html.TextBoxFor(Model => Model.Center_Name, new { placeholder = "Center Name", required = "required", @class = "form-control" })
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+
+                    </div>
+                    <div class="col-lg-4">
+                        @Html.Label("Registration #")
+                        @Html.TextBoxFor(Model => Model.Registration_No, new { placeholder = " Student Registration number", required = "required", @class = "form-control" })
+                        @Html.Label("Registration Date")
+                        @Html.TextBoxFor(Model => Model.Registration_Date, new { type = "date", placeholder = " registration date", required = "required", @class = "form-control" })
+                        @Html.Label("Mobile #")
+                        @Html.TextBoxFor(Model => Model.Contact_Phone, new { placeholder = "Phone number", required = "required", @class = "form-control" })
+                        @Html.Label("Student's Date Of Birth ")
+                        @Html.TextBoxFor(Model => Model.Date_Of_Birth, new { placeholder = "Date of borth", required = "required", @class = "form-control", type = "date" })
+                        @Html.Label("Description")
+
+                        @Html.TextAreaFor(Model => Model.Description, new { @class = "form-control" })
+                        <br />
+                    </div>
+
+                </div>
+                @Html.ActionLink("Add Student Record", "Index")
+
+            </form>
+
+}
+        </div>
 
 
         </div>

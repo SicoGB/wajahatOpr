@@ -18,6 +18,7 @@
   <EntityContainer Name="oprEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Groups" EntityType="Self.Group" />
     <EntitySet Name="Campus_Table" EntityType="oprModel.Campus_Table" />
+    <EntitySet Name="Student_Table" EntityType="oprModel.Student_Table" />
   </EntityContainer>
   <EntityType Name="Campus_Table">
     <Key>
@@ -37,5 +38,38 @@
     <Property Name="Is_Active" Type="Boolean" />
     <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="Short_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Student_Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Parent_Contact" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Student_Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Postal_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Registration_Date" Type="DateTime" Precision="3" />
+    <Property Name="User_ID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Modified_By" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Modified_Date" Type="DateTime" Precision="3" />
+    <Property Name="Is_Deleted" Type="Byte" />
+    <Property Name="Is_Active" Type="Byte" />
+    <Property Name="Description" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Short_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Father_Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Of_Birth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Roll_No" Type="Int32" />
+    <Property Name="Father_CNIC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Is_Banned" Type="Byte" />
+    <Property Name="Registration_No" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Is_Account_Active" Type="Byte" />
+    <Property Name="User_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="School_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Center_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Contact_Phone" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
   </EntityType>
 </Schema>

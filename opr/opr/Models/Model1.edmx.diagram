@@ -5,8 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bf799d92b7c84d2e8ae5d3c699c36615" Name="Diagram1">
-        <EntityTypeShape EntityType="oprModel.Group" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="oprModel.Campus_Table" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="oprModel.Student_Table" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="oprModel.Group" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -34,8 +34,42 @@
     <Property Name="Modified_By" Type="nvarchar" MaxLength="128" />
     <Property Name="Modified_Date" Type="datetime" />
   </EntityType>
+  <EntityType Name="Student_Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Contact_Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Parent_Contact" Type="nvarchar" MaxLength="20" />
+    <Property Name="Student_Email" Type="nvarchar" MaxLength="128" />
+    <Property Name="Postal_Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Registration_Date" Type="datetime" />
+    <Property Name="User_ID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Last_Modified_By" Type="nvarchar" MaxLength="128" />
+    <Property Name="Last_Modified_Date" Type="datetime" />
+    <Property Name="Is_Deleted" Type="tinyint" />
+    <Property Name="Is_Active" Type="tinyint" />
+    <Property Name="Description" Type="nvarchar" MaxLength="128" />
+    <Property Name="Short_Code" Type="nchar" MaxLength="10" />
+    <Property Name="Father_Name" Type="nvarchar" MaxLength="128" />
+    <Property Name="Date_Of_Birth" Type="date" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Roll_No" Type="int" />
+    <Property Name="Father_CNIC" Type="nvarchar" MaxLength="20" />
+    <Property Name="Is_Banned" Type="tinyint" />
+    <Property Name="Registration_No" Type="nchar" MaxLength="10" />
+    <Property Name="Is_Account_Active" Type="tinyint" />
+    <Property Name="User_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="1000" />
+    <Property Name="School_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Center_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Image" Type="varchar" MaxLength="500" />
+    <Property Name="Contact_Phone" Type="nchar" MaxLength="16" />
+  </EntityType>
   <EntityContainer Name="oprModelStoreContainer">
     <EntitySet Name="Campus_Table" EntityType="Self.Campus_Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Group" EntityType="Self.Group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student_Table" EntityType="Self.Student_Table" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

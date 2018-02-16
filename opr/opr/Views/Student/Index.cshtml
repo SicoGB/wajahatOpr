@@ -1,0 +1,67 @@
+﻿@model List<opr.Models.Student_Table>
+    @{
+        ViewBag.Title = "Index";
+    }
+    <div class=" panel-primary">
+
+        <div class="panel-heading">
+            <h2>List Of Students</h2>
+
+            <div class="panel-body"></div>
+        </div>
+        
+            <table class=" table-bordered table-striped">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Father CNIC</th>
+                <th>Phone #</th>
+                <th>Mobile #</th>
+                <th>Email ID</th>
+                <th>User ID</th>
+                <th>Short Code</th>
+                <th>Date Of Birth</th>
+                <th>Roll No</th>
+                <th>Center Name</th>
+                <th>Registration Date</th>
+                <th>Registration #</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>Description</th>
+                <th>Action</th>
+                @foreach (var stu in Model)
+        {
+            <tr>
+                <td>@stu.Id</td>
+                <td>@stu.Name</td>
+                <td>@stu.Father_Name</td>
+                <td>@stu.Father_CNIC</td>
+                <td>@stu.Contact_Phone</td>
+                <td>@stu.Contact_Mobile</td>
+                <td>@stu.Student_Email</td>
+                <td>@stu.User_ID</td>
+                <td>@stu.Short_Code</td>
+                <td>@stu.Date_Of_Birth</td>
+                <td>@stu.Roll_No</td>
+                <td>@stu.Center_Name</td>
+                <td>@stu.Registration_Date</td>
+                <td>@stu.Registration_No</td>
+                <td>@stu.User_Name</td>
+                <td>@stu.Password</td>
+                <td>@stu.Description</td>
+                <td>
+                    @Html.ActionLink("Delete ", "DeleteStudent", new { id = stu.Id })
+                    @Html.ActionLink("Edit ", "EditStudent", new { id = stu.Id })
+                </td>
+            </tr>
+
+}
+
+
+
+
+            </table>
+            @Html.ActionLink("Add Student Record", "AddStudent")
+        </div>
+
+    
